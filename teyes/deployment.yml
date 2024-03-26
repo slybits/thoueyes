@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: theyes-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: theyes
+  template:
+    metadata:
+      labels:
+        app: theyes
+    spec:
+      containers:
+      - name: theyes
+        image: docker.io/treecles101/thoueyes:testlist
+        ports:
+        - containerPort: 5000
